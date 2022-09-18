@@ -1,11 +1,11 @@
 // TODO: Include packages needed for this application
 
 const fs = require("fs");
-const axios = require("axios");
 const inquirer = require("inquirer");
-const markdown = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown.js");
+const fileName = "README.md";
 
-// TODO: Create an array of questions for user input
+
 var questions = [
         {
             type: "input",
@@ -13,57 +13,67 @@ var questions = [
             name: "title"
         },
         {
+            type: "input",
             message: "Enter project description:",
             name: "description"
         },
         {
+            type: "input",
             message: "Enter installation instructions:",
             name: "installation"
         },
         {
+            type: "input",
             message: "Enter usage information:",
-            name: "information"
+            name: "usage"
         },
         {
+            type: "input",
             message: "Enter contribution guidelines:",
-            name: "guidelines"
+            name: "contributing"
         },
         {
+            type: "input",
             message: "Enter test instructions:",
             name: "test"
         },
         {
-            message: "Enter type of license",
+            type: "list",
+            message: "Enter type of license: ",
             name: "license",
-            choices: ['MIT'],
+            choices: ['MIT', 'ISC', 'GNU'],
 
         },
         {
+            type: "input",
             message: "Enter GitHub username:",
             name: "username"
         },
         {
+            type: "input",
             message: "Enter email address:",
             name: "email"
         },
 
 ];
 
-// questions =[{}]
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    inquirer.prompt(questions)
-    .then((inquirerResponse, data) => {   
-        fs.writeFile("ReadMe.md", JSON.stringify(inquirerResponse, data), (err) => 
-        err ? console.log(err) : console.log("Success"));
+    const markDown = generateMarkdown(data);
+    fs.writeFile(fileName, markDown, function (err) {
+        if (err) throw err;
+        console.log("Success");
     })
 }
 
+
+
 // TODO: Create a function to initialize app
 function init () {
-    writeToFile();
-}
+      inquirer.prompt(questions)
+      .then(function(data) {writeToFile(fileName, data)})
+    } 
+
 
 init();
 
