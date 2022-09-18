@@ -1,13 +1,13 @@
-# README Generator
+# This is The project title
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  This app allows the user to create a readme file by answering prompts in the terminal.
+  This is where the description for the project goes.
 
   ## Table of Content
-   - [project description](#description)
-   - [installation](#installation)
+   - [Project Description](#description)
+   - [Installation](#installation)
    - [Usage](#usage)
    - [License](#license)
    - [Contributing](#contributing)
@@ -16,22 +16,22 @@
   
   
   ## Installation
-  Install node.js install npm version 8.2.4
+  These are the installation instructions.
 
   ## Usage
-  Run index.js file in node and answer the prompts that come up.
+  This is where the usage inmfromation will go.
 
   ## License
   This project is under the MIT license.
  
 
   ## Contributing
-  This is where contribution guidelines go.
+  This is where the contributing guidelines will go.
 
   ## Tests
-  This is where test instructions go.
+  This is where test instructions will go.
 
   ## Questions
 
-  If you have questions about this project contact me at zcfshr@gmail.com. My GitHub is at http://github.com/users/zacfisher1990
+  If you have questions about this project contact me at zcfshr@gmail.com. My GitHub is at http://github.com/zacfisher1990
 
